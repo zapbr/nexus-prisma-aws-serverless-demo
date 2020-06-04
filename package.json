@@ -1,0 +1,16 @@
+{
+  "name": "nexus-serverless-demo",
+  "version": "1.0.0",
+  "description": "Demo for usage of Nexus and Serverless",
+  "repository": "https://github.com/zapbr/nexus-serverless-demo.git",
+  "author": "Henrique Pimentel <pimentel@sport-thieme.de>",
+  "license": "MIT",
+  "dependencies": {
+    "nexus": "^0.23.0",
+    "nexus-plugin-prisma": "^0.9.0"
+  },
+  "scripts": {
+    "dev": "nexus dev",
+    "build": "nexus build"
+  }
+}
