@@ -11,6 +11,7 @@
   },
   "scripts": {
     "dev": "nexus dev",
-    "build": "nexus build"
+    "build": "nexus build",
+    "start": "node .nexus/build/api"
   }
 }
