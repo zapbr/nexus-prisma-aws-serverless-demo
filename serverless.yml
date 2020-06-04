@@ -1,0 +1,42 @@
+service: nexus-prisma-serverless-demo
+
+provider:
+    name: aws
+    runtime: nodejs12.x
+    stage: test
+    region: eu-west-1
+    timeout: 10
+    memorySize: 1024
+
+package:
+    exclude:
+        - node_modules/**
+        - api/**
+
+plugins:
+    - serverless-offline
+
+custom:
+    serverless-offline:
+        port: 4200
+    webpackIncludeModules: true
+
+functions:
+    playground:
+        handler: .nexus/build/api/app.playground
+        events:
+            - http:
+                  path: playground
+                  method: get
+                  cors: true
+    graphql:
+        handler: .nexus/build/api/app.graphql
+        events:
+            - http:
+                  path: graphql
+                  method: post
+                  cors: true
+            - http:
+                  path: graphql
+                  method: get
+                  cors: true
